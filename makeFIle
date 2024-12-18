@@ -1,0 +1,13 @@
+redis_start:
+	@docker start redis-container
+
+redis_stop:
+	@docker stop redis-container
+
+redis_connect:
+	@docker exec -it redis-container redis-cli
+
+build:
+	@go build  -o .\bin\exec .\cmd\main.go 
+run:build
+	@.\bin\exec
