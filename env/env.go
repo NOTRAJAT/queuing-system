@@ -9,8 +9,6 @@ type Config struct {
 	Redis_Password string
 	Redis_Host_PORT string
 	Redis_DB int
-	
-
 }
 
 var Env = initconfig()
@@ -23,7 +21,6 @@ func initconfig() Config {
 			value,_:= strconv.Atoi( getOSENV("REDIS_DB","0"))
 			return value
 		}(),
-	
 	}
 }
 
@@ -32,5 +29,4 @@ func getOSENV(key string, fallback string)string {
 		return value
 	}
 	return fallback
-
 }
